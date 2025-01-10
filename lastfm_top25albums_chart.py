@@ -42,7 +42,13 @@ def extract_images(data):
     return images
 
 # Function to display a 5x5 grid of album images
-def create_image_grid(images):
+def create_image_grid(images, period):
+    # Display the chart title with improved styling
+    st.markdown(
+        "<h1 style='text-align: center; font-size: 50px;'>Audiographia: User-Specific 5X5 Music Grid</h1>",
+        unsafe_allow_html=True
+    )
+    
     fig, axes = plt.subplots(5, 5, figsize=(15, 15))
     for ax, (title, url) in zip(axes.flatten(), images):
         response = requests.get(url)
@@ -53,11 +59,15 @@ def create_image_grid(images):
     # Disable unused axes if fewer than 25 albums
     for ax in axes.flatten()[len(images):]:
         ax.axis("off")
-    fig.suptitle("Top Albums (Last 7 Days)", fontsize=16)
+    
+    fig.suptitle(f"Top Albums ({period})", fontsize=24, fontweight='bold')
+
+    # Adjust grid spacing
+    fig.subplots_adjust(hspace=0.5, wspace=0.5)
     st.pyplot(fig)
 
 # Streamlit App
-st.title("Audiographia: User-Specific Weekly Music Grid")
+st.title("Audiographia: User-Specific 5X5 Music Grid")
 
 username = st.text_input("Enter your Last.fm username:")
 time_period = st.radio("Select a time period:", ("7 days", "1 month", "3 months", "6 months", "1 year", "Overall"))
@@ -78,7 +88,7 @@ if st.button("Generate Grid"):
             data = fetch_top_albums(username, period=period)
             images = extract_images(data)
             if images:
-                create_image_grid(images)
+                create_image_grid(images, time_period)
             else:
                 st.warning("No albums found for this user in the selected time period.")
         except Exception as e:
