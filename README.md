@@ -1,12 +1,15 @@
 Audiographia
 ============
+_A Visual Showcase of Your Music Habits_
+
+
 
 Audiographia is a Python-based application that generates a weekly chart of your favorite music based on your Last.fm scrobbling data. Whether you're curious about your listening trends or want to visually showcase your top artists, Audiographia provides an intuitive and educational way to explore your music habits.
 
 Features
 --------
 
--   Fetches your top artists from Last.fm over the last 7 days.
+-   Fetches your top artists from Last.fm over the last 7 days, 1 month, 3 months, 1 year or overall.
 
 -   Visualizes your weekly music data as a horizontal bar chart.
 
@@ -19,7 +22,7 @@ Getting Started
 
 ### Prerequisites
 
--   Python 3.7 or higher
+-   Python 3.11 or higher
 
 -   A Last.fm account
 
