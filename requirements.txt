@@ -1,5 +1,5 @@
 streamlit==1.41.0
-dotenv==0.21.0
+python-dotenv==0.21.0
 Pillow==10.0.0
 matplotlib==3.7.2
 requests==2.31.0
