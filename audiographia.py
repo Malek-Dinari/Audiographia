@@ -17,7 +17,7 @@ if not API_KEY:
 BASE_URL = "http://ws.audioscrobbler.com/2.0/"
 
 # Fallback placeholder image
-PLACEHOLDER_URL = "https://via.placeholder.com/300?text=No+Image"
+PLACEHOLDER_URL = "https://my-pf-reactjs-957932i1b-malek-dinaris-projects.vercel.app/"
 
 # Function to fetch user-specific top albums
 def fetch_top_albums(user, limit=25, period="7day"):
