@@ -33,7 +33,7 @@ Getting Started
 1.  Clone the repository:
 
     ```
-    git clone https://github.com/your-username/Audiographia.git
+    git clone https://github.com/Malek-Dinari/Audiographia.git
     cd Audiographia
     ```
 
